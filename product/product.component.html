@@ -1,0 +1,23 @@
+<div *ngIf="!isDetail">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.price | currency:'EUR' }}</p>
+    
+    <div class="product-image-container" *ngIf="product.imageUrl">
+        <img [src]="product.imageUrl" [alt]="product.name" class="product-image">
+    </div>
+
+    <button class="button-product" (click)="viewDetails()">En savoir plus</button>
+</div>
+
+<div *ngIf="isDetail" class="product-page">
+    <div class="product-page-container">
+        
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price | currency:'EUR' }}</p>
+        
+        <div class="product-image-page-container" *ngIf="product.imageUrl">
+            <img [src]="product.imageUrl" [alt]="product.name" class="product-image">
+        </div>
+    </div>
+</div>

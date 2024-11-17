@@ -1,0 +1,34 @@
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 80px;
+    
+}
+
+.logo img {
+    height: 100%;
+}
+
+nav a {
+    font-size: 1.3em;
+    text-decoration:none;
+    color: #151217;
+    margin: 0 15px 0 15px;
+    font-family: var(--font-title);
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-list a.is-active {
+    color: #DA001E;
+    text-decoration: underline;
+}
+

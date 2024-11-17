@@ -1,0 +1,34 @@
+<div class="accueil">
+    <div class="img-asterix">
+        <div class="description-bg">
+            <h1>AU PETIT VILLAGE</h1>
+            <div class="description">
+                <p>
+                    Nichée dans un charmant quartier aux allures d'antan, "Au Petit Village" est une boutique artisanale unique qui célèbre l'art de la figurine faite main. Notre atelier-boutique propose des créations originales mettant en scène la vie quotidienne d'un village gaulois imaginaire.
+                    Notre Savoir-faire
+                </p>
+                <p>
+                    Chaque figurine est minutieusement sculptée et peinte à la main par nos artisans passionnés. Utilisant des matériaux de qualité comme l'argile polymère et des peintures acryliques professionnelles, nous créons des pièces uniques pleines de caractère et d'humour.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="filter-container">
+        <span></span>
+        <input type="text" class="name-search" [(ngModel)]="searchQuery">
+        <button class="filter-price" (click)="sortByPrice()">
+            Prix 
+            <span *ngIf="sortOrder === 'asc'">↑</span>
+            <span *ngIf="sortOrder === 'desc'">↓</span>
+        </button>
+    </div>
+    <div class="products">
+        <div class="products-list">
+            <app-product 
+            *ngFor="let product of (products | productFilter:searchQuery | priceSort:sortOrder)"
+            [product]="product"
+            [isDetail]="false">
+        </app-product>
+        </div>
+    </div>
+</div>
